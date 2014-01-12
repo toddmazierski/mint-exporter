@@ -1,2 +1,5 @@
 # Ignore credentials in environment variables.
 .env
+
+# Ignore rbenv specification files.
+.rbenv-*
