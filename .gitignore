@@ -1,0 +1,2 @@
+# Ignore credentials in environment variables.
+.env
