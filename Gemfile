@@ -1,3 +1,6 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem "mechanize"
+gem 'foreman'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
+gem 'wait'

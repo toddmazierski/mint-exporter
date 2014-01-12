@@ -4,20 +4,25 @@ Regularly export your Mint.com transactions.
 
 ## Dependencies
 
-  * Ruby > 1.8.7 (tested with 1.8.7-p357 and 1.9.3-p125)
+  * Ruby > 1.9.2 (tested with 1.9.3-p194)
   * [Bundler](http://gembundler.com/)
 
 ## Installation
 
-```
-$ git clone git://github.com/toddmazierski/mint-exporter.git
-$ cd mint-exporter
-$ bundle
+```bash
+git clone git://github.com/toddmazierski/mint-exporter.git
+cd mint-exporter
+bundle
 ```
 
+## Configuration
+
+Please rename `.env.example` to `.env` and fill in your Mint credentials.
+
 ## Usage
-```
-$ ruby mint-exporter.rb foo@bar.com password > mint-transactions.csv
+
+```bash
+foreman run ruby mint-exporter.rb > mint-transactions.csv
 ```
 
 ## Note

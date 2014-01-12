@@ -1,26 +1,16 @@
-require "uri"
-require "rubygems"
-require "bundler/setup"
+require 'uri'
+require 'open-uri'
+require 'bundler/setup'
 Bundler.require
 
-hostname = "https://wwws.mint.com/"
+require_relative 'lib/credentials'
+require_relative 'lib/driver'
+require_relative 'lib/mint_exporter'
 
-unless ARGV.length == 2
-  puts "Usage: ruby #{$0} USERNAME PASSWORD"
-  exit 1
-end
+credentials = Credentials.new
+credentials.validate!
 
-username = ARGV[0]
-password = ARGV[1]
+Driver.configure
 
-agent = Mechanize.new
-agent.pluggable_parser.default = Mechanize::Download
-
-page  = agent.get(URI.join hostname, "/login.event")
-form = page.form_with(:id => "form-login")
-
-form.username = username
-form.password = password
-form.submit
-
-puts agent.get(URI.join hostname, "/transactionDownload.event").body
+mint_exporter = MintExporter.new(credentials)
+puts mint_exporter.csv
