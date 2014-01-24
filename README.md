@@ -27,4 +27,4 @@ foreman run ruby mint-exporter.rb > mint-transactions.csv
 
 ## Note
 
-Unfortunately, [because Mint.com does not yet have an open API](http://www.quora.com/Mint-com/Does-Mint-com-have-an-open-API?share=1), mint-exporter relies on screen-scraping to get the data. Because of this, this script could stop working at any time.
+Unfortunately, [because Mint.com does not yet have an open API](http://www.quora.com/Mint-com/Does-Mint-com-have-an-open-API?share=1), mint-exporter relies on private APIs to get the data. Because of this, this script could stop working at any time.
