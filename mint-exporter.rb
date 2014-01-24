@@ -1,16 +1,12 @@
-require 'uri'
-require 'open-uri'
 require 'bundler/setup'
 Bundler.require
 
 require_relative 'lib/credentials'
-require_relative 'lib/driver'
-require_relative 'lib/mint_exporter'
+require_relative 'lib/mint'
 
 credentials = Credentials.new
 credentials.validate!
 
-Driver.configure
-
-mint_exporter = MintExporter.new(credentials)
-puts mint_exporter.csv
+mint = Mint.new(credentials)
+mint.authenticate
+puts mint.csv
