@@ -9,4 +9,4 @@ credentials.validate!
 
 mint = Mint.new(credentials)
 mint.authenticate
-puts mint.csv
+puts mint.csv_with_bug_6_workaround

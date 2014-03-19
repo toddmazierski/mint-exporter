@@ -30,4 +30,21 @@ class Mint
   def csv
     RestClient.get(CSV_URL, :cookies => @cookies)
   end
+
+  # A (hopefully) temporary workaround for bug #6:
+  #
+  #   https://github.com/toddmazierski/mint-exporter/issues/6
+  #
+  # Attempts to download the CSV up to 10 times, pausing for 5 seconds between
+  # each attempt.
+  def csv_with_bug_6_workaround
+    wait = Wait.new(
+      :attempts => 10,
+      :timeout  => 60,
+      :delay    => 5,
+      :rescue   => RestClient::ResourceNotFound
+    )
+
+    wait.until { csv }
+  end
 end
