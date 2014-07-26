@@ -5,9 +5,11 @@ GEM
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
-    mime-types (2.0)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
+    mime-types (2.3)
+    netrc (0.7.7)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     thor (0.18.1)
     wait (0.5.1)
 
@@ -16,5 +18,5 @@ PLATFORMS
 
 DEPENDENCIES
   foreman
-  rest-client
+  rest-client (~> 1.7)
   wait
