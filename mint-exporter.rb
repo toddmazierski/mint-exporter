@@ -1,12 +1,9 @@
-require 'bundler/setup'
-Bundler.require
+require 'mint'
 
-require_relative 'lib/credentials'
-require_relative 'lib/mint'
+Mint.configure do |config|
+  config.username = ENV.fetch('MINT_USERNAME')
+  config.password = ENV.fetch('MINT_PASSWORD')
+end
 
-credentials = Credentials.new
-credentials.validate!
-
-mint = Mint.new(credentials)
-mint.authenticate
-puts mint.csv_with_bug_6_workaround
+client = Mint::Client.new
+puts client.transactions.fetch

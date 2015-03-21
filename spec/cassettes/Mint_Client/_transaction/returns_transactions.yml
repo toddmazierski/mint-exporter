@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://wwws.mint.com/loginUserSubmit.xevent
+    body:
+      encoding: US-ASCII
+      string: username=test%40example.org&password=123456&task=L
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '50'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 21 Mar 2015 21:26:44 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate,
+      Expires:
+      - '0'
+      X-Mint-Start:
+      - '1426973204037'
+      X-Mint-End:
+      - '1426973204550'
+      Content-Type:
+      - text/json;charset=UTF-8
+      Content-Language:
+      - en-US
+      Set-Cookie:
+      - MINTJSESSIONID=ED79C0A096691EDA96972F6D770EAB80; Path=/; Secure; HttpOnly
+      - ROUTEID=.QKsqwdcF; path=/
+      - _exp_mintPN=2; Expires=Sat, 04-Apr-2015 21:26:44 GMT; Path=/
+      - brandingOption=whitelabel; Domain=wwws.mint.com; Expires=Sat, 04-Apr-2015
+        21:26:44 GMT; Path=/
+      - current-config-source=Back-end; Domain=wwws.mint.com; Expires=Sat, 04-Apr-2015
+        21:26:44 GMT; Path=/
+      - currentClientType=Mint; Domain=wwws.mint.com; Expires=Sat, 04-Apr-2015 21:26:44
+        GMT; Path=/
+      - mintUserName="test@example.org"; Version=1; Domain=wwws.mint.com; Path=/
+      - mu=1; Domain=.mint.com; Expires=Tue, 18-Mar-2025 21:26:44 GMT
+      - userguid=FD0B9808AB528186; Domain=wwws.mint.com; Expires=Sat, 04-Apr-2015
+        21:26:44 GMT; Path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"countryId":1,"CSRFToken":"2017409IDrVJBiesQtT76RB8V3gGLRXcRKWbRWVk4FC9g","hasAccounts":false,"buildNumber":"ph6667.20","sUser":{"username":"test@example.org","shouldMigrate":true,"token":"2017409IDrVJBiesQtT76RB8V3gGLRXcRKWbRWVk4FC9g","zipcode":"08000","userId":2017409,"clientIntegrationType":"Mint","country":"US","productType":"FREE"},"clientBuildNumber":"spa47.14","supportedLocations":"\/(login|welcome|overview|transaction|planning|goal|trend|creditreport|save|oiiMigration).event","nickname":"","isCreditScoreRegistered":false,"omnitureData":{"fiName":"","userFICount":"0","userAgeRange":"","userLogin":"true","userCreditScore":"Unknown","productType":"FREE","userState":"","userLifetimeLogins":"6","userLoginDate":"03\/21\/2015
+        02:26 PM","userGender":"","userMobilePlatform":"web only","userCountry":"United
+        States","userCreateDate":"07\/11\/2008 09:48 AM","userSignup":"false","userLastLogin":"03\/21\/2015
+        02:22 PM","userZip":"08000"},"showMigratePasswordPage":true,"isRefreshing":true}'
+    http_version:
+  recorded_at: Sat, 21 Mar 2015 21:26:44 GMT
+- request:
+    method: get
+    uri: https://wwws.mint.com/transactionDownload.event
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Cookie:
+      - Domain=wwws.mint.com; Expires=Sat; MINTJSESSIONID=ED79C0A096691EDA96972F6D770EAB80;
+        Path=%2F; ROUTEID=.QKsqwdcF; Version=1; _exp_mintPN=2; brandingOption=whitelabel;
+        current-config-source=Back-end; currentClientType=Mint; mintUserName=%22test%40example.org%22;
+        mu=1; userguid=FD0B9808AB528186
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 21 Mar 2015 21:26:45 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate,
+      Expires:
+      - '0'
+      X-Mint-Start:
+      - '1426973205185'
+      X-Mint-End:
+      - '1426973205193'
+      Content-Disposition:
+      - attachment; filename="transactions.csv"
+      Pragma:
+      - no-cache
+      No-Store:
+      - max-age=0
+      Content-Type:
+      - text/csv;charset=UTF-8
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '115'
+    body:
+      encoding: UTF-8
+      string: |
+        "Date","Description","Original Description","Amount","Transaction Type","Category","Account Name","Labels","Notes"
+        "5/01/2009","homestarrunner.com","FLUFFY PUFF MARSHMALLOWS","11.99","debit","Junk Food","QuesoCard","",""
+    http_version:
+  recorded_at: Sat, 21 Mar 2015 21:26:45 GMT
+recorded_with: VCR 2.9.3
