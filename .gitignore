@@ -1,5 +1,12 @@
-# Ignore credentials in environment variables.
+# Secret credentials in environment variables.
 .env
 
-# Ignore rbenv specification files.
+# rbenv specification files.
 .rbenv-*
+
+# Bundler's artifacts.
+.bundle
+vendor/bundle
+
+# Mint transactions.
+*.csv
