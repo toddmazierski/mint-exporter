@@ -1,3 +1,5 @@
+### ⚠️  This project is no longer maintained since Mint.com strengthened their authentication in 2016 ([details](https://github.com/toddmazierski/mint-exporter/issues/16)) ⚠️
+
 # mint-exporter
 
 Regularly export your Mint.com transactions.
